@@ -10,13 +10,19 @@
 	<script>
 		function secondHighest(arr) {
 			//Write your code here
-			if (arr.length > 1) {
-				const uniqueSorted = [...new Set(arr)].sort((a, b) => a - b);
-				return data[arr.length-2];
-			}
-			else if (arr.length <= 1) {
-				return -Infinity
-			}
+			arr = arr.map(Number);
+
+      // Remove duplicates
+      const unique = [...new Set(arr)];
+
+      // Less than 2 unique values? Return -Infinity
+      if (unique.length < 2) return -Infinity;
+
+      // Sort in descending order
+      unique.sort((a, b) => b - a);
+
+      // Return second highest
+      return unique[1];
 			
 			
 		}
