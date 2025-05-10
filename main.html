@@ -14,8 +14,10 @@
 				let data =arr.sort((a,b)=>a-b);
 				return data[arr.length-2];
 			}
+			else if (arr.length <= 1) {
+				return -Infinity
+			}
 			
-			return -Infinity
 			
 		}
 
